@@ -1,5 +1,5 @@
 {
-  "id": "NeedForSpEd_w0.21",
+  "id": "NeedForSpEd_w0.22",
   "title": {
     "en": " SpEd Schools"
   },
@@ -56,7 +56,7 @@
               "specialized_education=special_needs"
             ]
           },
-          "multiAnswer": true,
+          "multiAnswer": false,
           "mappings": [
             {
               "if": {
@@ -80,7 +80,9 @@
             }
           ],
           "condition": {
-            "and": []
+            "and": [
+
+            ]
           },
           "id": "schools-special_needs:autism"
         },
@@ -92,7 +94,10 @@
             "en": "{special_needs:adhd}, this school offers SpEd program for learners with <b>autism</b>."
           },
           "freeform": {
-            "key": "special_needs:adhd"
+            "key": "special_needs:adhd",
+            "addExtraTags": [
+              "specialized_education=special_needs"
+            ]
           },
           "mappings": [
             {
@@ -126,7 +131,10 @@
             "en": "Is a SpEd program for <b>exceptional learning (i.e., gifted)</b> abilities offered here?"
           },
           "freeform": {
-            "key": "special_needs:exceptional_learning"
+            "key": "special_needs:exceptional_learning",
+            "addExtraTags": [
+              "specialized_education=special_needs"
+            ]
           },
           "mappings": [
             {
@@ -160,7 +168,10 @@
             "en": "Is a SpEd program for learners with <b>learning disbilities</b> offered here?"
           },
           "freeform": {
-            "key": "special_needs:learning_disability"
+            "key": "special_needs:learning_disability",
+            "addExtraTags": [
+              "specialized_education=special_needs"
+            ]
           },
           "mappings": [
             {
@@ -194,7 +205,10 @@
             "en": "Is a SpEd program for learners with <b>hearing impairment</b> offered here?"
           },
           "freeform": {
-            "key": "special_needs:hearing_impairment"
+            "key": "special_needs:hearing_impairment",
+            "addExtraTags": [
+              "specialized_education=special_needs"
+            ]
           },
           "mappings": [
             {
@@ -250,7 +264,10 @@
             "en": "Is a SpEd program for learners with <b>visual impairment</b> offered here?"
           },
           "freeform": {
-            "key": "special_needs:visual_impairment"
+            "key": "special_needs:visual_impairment",
+            "addExtraTags": [
+              "specialized_education=special_needs"
+            ]
           },
           "id": "schools-special_needs:visual_impairment"
         },
@@ -284,12 +301,17 @@
             "en": "Is a SpEd program for learners with <b>cancer</b> offered here?"
           },
           "freeform": {
-            "key": "special_needs:cancer"
+            "key": "special_needs:cancer",
+            "addExtraTags": [
+              "specialized_education=special_needs"
+            ]
           },
           "id": "schools-special_needs:cancer"
         }
       ],
-      "presets": [],
+      "presets": [
+
+      ],
       "source": {
         "osmTags": {
           "or": [
@@ -315,38 +337,9 @@
             "centroid"
           ]
         }
-      ],
-      "icon": {
-        "freeform": {
-          "addExtraTags": []
-        },
-        "mappings": []
-      },
-      "iconSize": {
-        "freeform": {
-          "addExtraTags": []
-        },
-        "mappings": []
-      },
-      "color": {
-        "freeform": {
-          "addExtraTags": []
-        },
-        "mappings": []
-      },
-      "width": {
-        "freeform": {
-          "addExtraTags": []
-        },
-        "mappings": []
-      }
+      ]
     }
   ],
   "credits": "",
-  "enableNoteImports": false,
-  "language": [
-    "en"
-  ],
-  "version": "2023-1- 1 11:24:6",
-  "roamingRenderings": []
+  "enableNoteImports": false
 }
