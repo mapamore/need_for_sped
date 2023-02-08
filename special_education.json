@@ -85,7 +85,7 @@
             {
               "if": {
                 "and": [
-                  "operator=government"
+                  "operator:type=government"
                 ]
               },
               "then": {
@@ -95,7 +95,7 @@
             {
               "if": {
                 "and": [
-                  "operator=religious"
+                  "operator:type=religious"
                 ]
               },
               "then": {
@@ -105,7 +105,7 @@
             {
               "if": {
                 "and": [
-                  "operator=private"
+                  "operator:type=private"
                 ]
               },
               "then": {
@@ -115,7 +115,7 @@
             {
               "if": {
                 "and": [
-                  "operator=community"
+                  "operator:type=community"
                 ]
               },
               "then": {
@@ -125,7 +125,7 @@
             {
               "if": {
                 "and": [
-                  "operator=consortium"
+                  "operator:type=consortium"
                 ]
               },
               "then": {
@@ -135,7 +135,7 @@
             {
               "if": {
                 "and": [
-                  "operator=public"
+                  "operator:type=public"
                 ]
               },
               "then": {
@@ -145,7 +145,7 @@
             {
               "if": {
                 "and": [
-                  "operator="
+                  "operator:type="
                 ]
               },
               "then": {
