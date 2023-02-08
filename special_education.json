@@ -1,6 +1,6 @@
 {
   "id": "NeedForSpEd_dev",
-  "version": "0.2",
+  "version": "0.3",
   "title": {
     "en": " SpEd Schools"
   },
@@ -8,7 +8,7 @@
     "en": "A map of schools with SpEd programs"
   },
   "description": {
-    "en": "This map lets you update schools that offer <a href=https://wikipedia.org/wiki/Special_education>Special Education</a>(SpEd) programs in their curriculum. SpEd is an acronym used to refer to learning programs for learners who require specialized education, and encompasses learners with a wide range of special needs: mental incapacity, physical disability, and different levels of learning abilities."
+    "en": "This map lets you update a schools <a href=https://wikipedia.org/wiki/Special_education>Special Education</a>(SpEd) offerings. SpEd is an acronym used to refer to learning programs for learners who require specialized education, and encompasses learners with a wide range of special needs: mental incapacity, physical disability, and different levels of learning abilities."
   },
   "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg",
   "startLat": 10.337955211834469,
@@ -154,6 +154,58 @@
 
             ]
           }
+        },
+        {
+          "id": "sped-offerings",
+          "condition": {
+            "or": [
+              "amenity=school",
+              "school=special_needs_education",
+              "specialized_education=special_needs",
+              "special_needs:.*=yes"
+            ]
+          },
+          "question": {
+            "en": "What SpEd programs does the school offer?"
+          },
+          "multiAnswer": true,
+          "mappings": [
+            {
+              "if": "special_needs:autism_spectrum_disorder=yes",
+              "then": {
+                "en": "Autism Spectrum Disorder"
+              },
+              "ifnot": "special_needs:autism_spectrum_disorder="
+            },
+            {
+              "if": "special_needs:blindness=yes",
+              "then": {
+                "en": "Blindness"
+              },
+              "ifnot": "special_needs:blindness="
+            },
+            {
+              "if": "special_needs:deafness=yes",
+              "then": {
+                "en": "Deafness"
+              },
+              "ifnot": "special_needs:blindness="
+            },
+            {
+              "if": "special_needs:cancer=yes",
+              "then": {
+                "en": "Cancer"
+              },
+              "ifnot": "special_needs:cancer="
+            },
+            {
+              "if": "special_needs:exceptional_learning=yes",
+              "then": {
+                "en": "Exceptional learning ability ('Gifted')"
+              },
+              "ifnot": "special_needs:exceptional_learning="
+            }
+          ]
         }
       ],
       "presets": [
