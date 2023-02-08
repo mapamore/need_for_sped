@@ -67,6 +67,34 @@
             }
           ]
         },
+        "website",
+        "email",
+        "phone",
+        "contact:facebook",
+        {
+          "render": {
+            "en": "The school is called {name}."
+          },
+          "question": {
+            "en": "What is the name of this school"
+          },
+          "freeform": {
+            "key": "name"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "name="
+                ]
+              },
+              "then": {
+                "en": "The school name is unknown, or not set."
+              },
+              "hideInAnswer": true
+            }
+          ]
+        },
         {
           "render": {
             "en": "The operator type is <b>{operator:type}</b>."
@@ -145,7 +173,7 @@
                 ]
               },
               "then": {
-                "en": "The operator is unknown, or not set."
+                "en": "The operator type is unknown, or not set."
               }
             }
           ],
@@ -204,7 +232,12 @@
               },
               "ifnot": "special_needs:hearing_impairment="
             }
-          ]
+          ],
+          "condition": {
+            "and": [
+
+            ]
+          }
         }
       ],
       "presets": [
