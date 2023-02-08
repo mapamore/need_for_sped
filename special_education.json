@@ -1,6 +1,6 @@
 {
   "id": "NeedForSpEd_dev",
-  "version": "0.3",
+  "version": "0.30",
   "title": {
     "en": " SpEd Schools"
   },
@@ -8,7 +8,7 @@
     "en": "A map of schools with SpEd programs"
   },
   "description": {
-    "en": "This map lets you update a schools <a href=https://wikipedia.org/wiki/Special_education>Special Education</a>(SpEd) offerings. SpEd is an acronym used to refer to learning programs for learners who require specialized education, and encompasses learners with a wide range of special needs: mental incapacity, physical disability, and different levels of learning abilities."
+    "en": "This map lets you update schools that offer <a href=https://wikipedia.org/wiki/Special_education>Special Education</a>(SpEd) programs in their curriculum. SpEd is an acronym used to refer to learning programs for learners who require specialized education, and encompasses learners with a wide range of special needs: mental incapacity, physical disability, and different levels of learning abilities."
   },
   "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg",
   "startLat": 10.337955211834469,
@@ -17,7 +17,7 @@
   "widenFactor": 0.05,
   "layers": [
     {
-      "id": "schools",
+      "id": "school",
       "name": {
         "en": "schools"
       },
@@ -70,31 +70,6 @@
         "website",
         "email",
         "phone",
-        "contact:facebook",
-        {
-          "render": {
-            "en": "The school is called {name}."
-          },
-          "question": {
-            "en": "What is the name of this school"
-          },
-          "freeform": {
-            "key": "name"
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "name="
-                ]
-              },
-              "then": {
-                "en": "The school name is unknown, or not set."
-              },
-              "hideInAnswer": true
-            }
-          ]
-        },
         {
           "render": {
             "en": "The operator type is <b>{operator:type}</b>."
@@ -173,75 +148,106 @@
                 ]
               },
               "then": {
-                "en": "The operator type is unknown, or not set."
+                "en": "The operator is unknown, or not set."
               }
             }
           ],
           "condition": {
-            "and": [
-
-            ]
+            "and": []
           }
         },
         {
-          "id": "sped-offerings",
-          "question": {
-            "en": "Which SpEd programs does the school offer?"
+          "render": {
+            "en": "{contact:facebook}"
           },
+          "question": {
+            "en": "What is their Facebook page (if any)?"
+          },
+          "freeform": {
+            "key": "contact:facebook",
+            "type": "url"
+          },
+          "mappings": []
+        },
+        {
           "multiAnswer": true,
+          "render": {
+            "en": "{special_needs:}"
+          },
+          "freeform": {
+            "key": "special_needs:"
+          },
           "mappings": [
             {
-              "if": "special_needs:autism_spectrum_disorder=yes",
+              "if": {
+                "and": [
+                  "special_needs:asd=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
               "then": {
                 "en": "Autism Spectrum Disorder"
               },
-              "ifnot": "special_needs:autism_spectrum_disorder="
+              "ifnot": "special_needs:asd="
             },
             {
-              "if": "special_needs:blindness=yes",
+              "if": {
+                "and": [
+                  "special_needs:adhd=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Attention Deficit Hyperactivity Disorder"
+              },
+              "ifnot": "special_needs:adhd="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:blindness=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
               "then": {
                 "en": "Blindness"
               },
               "ifnot": "special_needs:blindness="
             },
             {
-              "if": "special_needs:deafness=yes",
-              "then": {
-                "en": "Deafness"
+              "if": {
+                "and": [
+                  "special_needs:hearing_impairment=yes",
+                  "specialized_education=special_needs"
+                ]
               },
-              "ifnot": "special_needs:blindness="
-            },
-            {
-              "if": "special_needs:cancer=yes",
               "then": {
-                "en": "Cancer"
-              },
-              "ifnot": "special_needs:cancer="
-            },
-            {
-              "if": "special_needs:exceptional_learning=yes",
-              "then": {
-                "en": "Exceptional learning ability ('Gifted')"
-              },
-              "ifnot": "special_needs:exceptional_learning="
-            },
-            {
-              "if": "special_needs:hearing_impairment=yes",
-              "then": {
-                "en": "Exceptional learning ability ('Gifted')"
+                "en": "Hearing Impairment"
               },
               "ifnot": "special_needs:hearing_impairment="
             }
           ],
+          "question": {
+            "en": "Offers Specialized Education?"
+          },
           "condition": {
-            "and": [
-
-            ]
+            "and": []
           }
         }
       ],
       "presets": [
-
+        {
+          "tags": [
+            "amenity=school",
+            "school=special_needs_education"
+          ],
+          "title": {
+            "en": "SpEd School"
+          },
+          "description": {
+            "en": "A Special Needs Education School"
+          }
+        }
       ],
       "source": {
         "osmTags": {
@@ -271,43 +277,27 @@
       ],
       "icon": {
         "freeform": {
-          "addExtraTags": [
-
-          ]
+          "addExtraTags": []
         },
-        "mappings": [
-
-        ]
+        "mappings": []
       },
       "iconSize": {
         "freeform": {
-          "addExtraTags": [
-
-          ]
+          "addExtraTags": []
         },
-        "mappings": [
-
-        ]
+        "mappings": []
       },
       "color": {
         "freeform": {
-          "addExtraTags": [
-
-          ]
+          "addExtraTags": []
         },
-        "mappings": [
-
-        ]
+        "mappings": []
       },
       "width": {
         "freeform": {
-          "addExtraTags": [
-
-          ]
+          "addExtraTags": []
         },
-        "mappings": [
-
-        ]
+        "mappings": []
       },
       "overpassTags": {
         "and": [
@@ -321,7 +311,5 @@
   "language": [
     "en"
   ],
-  "roamingRenderings": [
-
-  ]
+  "roamingRenderings": []
 }
