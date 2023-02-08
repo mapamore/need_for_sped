@@ -1,6 +1,6 @@
 {
   "id": "NeedForSpEd_dev",
-  "version": "0.30",
+  "version": "0.31",
   "title": {
     "en": " SpEd Schools"
   },
@@ -15,6 +15,7 @@
   "startLon": 123.95728965702062,
   "startZoom": 15,
   "widenFactor": 0.05,
+  "defaultBackgroundId": "HDM_HOT",
   "layers": [
     {
       "id": "school",
@@ -172,10 +173,11 @@
         {
           "multiAnswer": true,
           "render": {
-            "en": "{special_needs:}"
+            "en": "{specialized_education}"
           },
           "freeform": {
-            "key": "special_needs:"
+            "key": "specialized_education",
+            "addExtraTags": []
           },
           "mappings": [
             {
@@ -233,7 +235,8 @@
           "condition": {
             "and": []
           }
-        }
+        },
+        "images"
       ],
       "presets": [
         {
@@ -264,7 +267,7 @@
       "mapRendering": [
         {
           "icon": {
-            "render": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg"
+            "render": "circle:green;https://upload.wikimedia.org/wikipedia/commons/b/bd/Class_room_icon.svg"
           },
           "iconSize": {
             "render": "20,20,center"
