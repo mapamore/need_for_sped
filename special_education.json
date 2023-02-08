@@ -158,15 +158,10 @@
         {
           "id": "sped-offerings",
           "condition": {
-            "or": [
-              "amenity=school",
-              "school=special_needs_education",
-              "specialized_education=special_needs",
-              "special_needs:.*=yes"
-            ]
+
           },
           "question": {
-            "en": "What SpEd programs does the school offer?"
+            "en": "Which SpEd programs does the school offer?"
           },
           "multiAnswer": true,
           "mappings": [
@@ -204,6 +199,13 @@
                 "en": "Exceptional learning ability ('Gifted')"
               },
               "ifnot": "special_needs:exceptional_learning="
+            },
+            {
+              "if": "special_needs:hearing_impairment=yes",
+              "then": {
+                "en": "Exceptional learning ability ('Gifted')"
+              },
+              "ifnot": "special_needs:hearing_impairment="
             }
           ]
         }
