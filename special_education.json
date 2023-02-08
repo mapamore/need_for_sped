@@ -171,6 +171,42 @@
           "mappings": []
         },
         {
+          "question": {
+            "en": "Does the school offer any SpEd program?"
+          },
+          "freeform": {
+            "key": "specialized_education"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "specialized_education="
+                ]
+              },
+              "then": {
+                "en": "SpEd programs are  <b>not</b> available, or unknown."
+              },
+              "hideInAnswer": false
+            },
+            {
+              "if": {
+                "and": [
+                  "specialized_education=special_needs",
+                  "education_program=specialized_education"
+                ]
+              },
+              "then": {
+                "en": "SpEd programs are available."
+              }
+            }
+          ],
+          "render": {
+            "en": "<b>Curriculum</b>: {specialized_education}"
+          }
+        },
+        {
+          "id": "sped-programs",
           "multiAnswer": true,
           "render": {
             "en": "{specialized_education}"
@@ -230,7 +266,7 @@
             }
           ],
           "question": {
-            "en": "Offers Specialized Education?"
+            "en": "Which SpEd programs are available?"
           },
           "condition": {
             "and": []
@@ -248,7 +284,30 @@
             "en": "SpEd School"
           },
           "description": {
-            "en": "A Special Needs Education School"
+            "en": "A school <b>exclusively</b> for learners with Special Education Needs."
+          }
+        },
+        {
+          "tags": [
+            "amenity=school",
+            "specialized_education=special_needs"
+          ],
+          "title": {
+            "en": " School integrated with SpEd"
+          },
+          "description": {
+            "en": "A regular school with integrated SpEd programs."
+          }
+        },
+        {
+          "tags": [
+            "amenity=school"
+          ],
+          "title": {
+            "en": "regular school"
+          },
+          "description": {
+            "en": "A regular school <b>without</b> SpEd programs."
           }
         }
       ],
