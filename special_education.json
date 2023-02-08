@@ -157,9 +157,6 @@
         },
         {
           "id": "sped-offerings",
-          "condition": {
-
-          },
           "question": {
             "en": "Which SpEd programs does the school offer?"
           },
