@@ -1,6 +1,6 @@
 {
   "id": "NeedForSpEd_dev",
-  "version": "0.31",
+  "version": "0.32",
   "title": {
     "en": " SpEd Schools"
   },
@@ -154,7 +154,9 @@
             }
           ],
           "condition": {
-            "and": []
+            "and": [
+
+            ]
           }
         },
         {
@@ -168,7 +170,19 @@
             "key": "contact:facebook",
             "type": "url"
           },
-          "mappings": []
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "contact:facebook="
+                ]
+              },
+              "then": {
+                "en": "The school's Facebook page is unknown, or not set."
+              },
+              "hideInAnswer": true
+            }
+          ]
         },
         {
           "question": {
@@ -213,7 +227,9 @@
           },
           "freeform": {
             "key": "specialized_education",
-            "addExtraTags": []
+            "addExtraTags": [
+
+            ]
           },
           "mappings": [
             {
@@ -266,10 +282,12 @@
             }
           ],
           "question": {
-            "en": "Which SpEd programs are available?"
+            "en": "Please select the available SpEd programs."
           },
           "condition": {
-            "and": []
+            "and": [
+
+            ]
           }
         },
         "images"
@@ -326,7 +344,7 @@
       "mapRendering": [
         {
           "icon": {
-            "render": "circle:green;https://upload.wikimedia.org/wikipedia/commons/b/bd/Class_room_icon.svg"
+            "render": "circle:lime;https://upload.wikimedia.org/wikipedia/commons/b/bd/Class_room_icon.svg"
           },
           "iconSize": {
             "render": "20,20,center"
@@ -338,28 +356,49 @@
         }
       ],
       "icon": {
-        "freeform": {
-          "addExtraTags": []
-        },
-        "mappings": []
+        "render": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "specialized_education=special_needs"
+              ]
+            },
+            "then": {
+              "en": "circle:lime;https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg"
+            }
+          }
+        ]
       },
       "iconSize": {
         "freeform": {
-          "addExtraTags": []
+          "addExtraTags": [
+
+          ]
         },
-        "mappings": []
+        "mappings": [
+
+        ]
       },
       "color": {
         "freeform": {
-          "addExtraTags": []
+          "addExtraTags": [
+
+          ]
         },
-        "mappings": []
+        "mappings": [
+
+        ]
       },
       "width": {
         "freeform": {
-          "addExtraTags": []
+          "addExtraTags": [
+
+          ]
         },
-        "mappings": []
+        "mappings": [
+
+        ]
       },
       "overpassTags": {
         "and": [
@@ -373,5 +412,7 @@
   "language": [
     "en"
   ],
-  "roamingRenderings": []
+  "roamingRenderings": [
+
+  ]
 }
