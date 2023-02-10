@@ -154,9 +154,7 @@
             }
           ],
           "condition": {
-            "and": [
-
-            ]
+            "and": []
           }
         },
         {
@@ -227,9 +225,7 @@
           },
           "freeform": {
             "key": "specialized_education",
-            "addExtraTags": [
-
-            ]
+            "addExtraTags": []
           },
           "mappings": [
             {
@@ -285,9 +281,7 @@
             "en": "Please select the available SpEd programs."
           },
           "condition": {
-            "and": [
-
-            ]
+            "and": []
           }
         },
         "images"
@@ -341,20 +335,6 @@
           ]
         }
       },
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "circle:lime;https://upload.wikimedia.org/wikipedia/commons/b/bd/Class_room_icon.svg"
-          },
-          "iconSize": {
-            "render": "20,20,center"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        }
-      ],
       "icon": {
         "render": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg",
         "mappings": [
@@ -371,40 +351,20 @@
         ]
       },
       "iconSize": {
-        "freeform": {
-          "addExtraTags": [
-
-          ]
-        },
-        "mappings": [
-
-        ]
+        "mappings": []
       },
       "color": {
-        "freeform": {
-          "addExtraTags": [
-
-          ]
-        },
-        "mappings": [
-
-        ]
+        "mappings": []
       },
       "width": {
-        "freeform": {
-          "addExtraTags": [
-
-          ]
-        },
-        "mappings": [
-
-        ]
+        "mappings": []
       },
       "overpassTags": {
         "and": [
           "amenity=school"
         ]
-      }
+      },
+      "wayHandling": 1
     }
   ],
   "credits": "",
@@ -412,7 +372,5 @@
   "language": [
     "en"
   ],
-  "roamingRenderings": [
-
-  ]
+  "roamingRenderings": []
 }
