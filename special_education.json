@@ -1,6 +1,6 @@
 {
   "id": "NeedForSpEd_dev",
-  "version": "0.32",
+  "version": "0.35",
   "title": {
     "en": " SpEd Schools"
   },
@@ -197,7 +197,7 @@
                 ]
               },
               "then": {
-                "en": "SpEd programs are  <b>not</b> available, or unknown."
+                "en": "SpEd programs are <b>not</b> available, or unknown."
               },
               "hideInAnswer": false
             },
@@ -214,7 +214,7 @@
             }
           ],
           "render": {
-            "en": "<b>Curriculum</b>: {specialized_education}"
+            "en": "The school offers <b>Special Needs education.</b> (i.e. {specialized_education})"
           }
         },
         {
@@ -275,13 +275,249 @@
                 "en": "Hearing Impairment"
               },
               "ifnot": "special_needs:hearing_impairment="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:exceptional_learning=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Exceptional Learning ('gifted')"
+              },
+              "ifnot": "special_needs:exceptional_learning="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:cancer=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Cancer"
+              },
+              "ifnot": "special_needs:cancer="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:cerebral_palsy=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Cerebral Palsy"
+              },
+              "ifnot": "special_needs:cerebral_palsy="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_adaptive_skills=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in applying Adaptive Skills"
+              },
+              "ifnot": "special_needs:difficulty_adaptive_skills="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_knowledge_application=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in applying Knowledge"
+              },
+              "ifnot": "special_needs:difficulty_knowledge_application="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_communicating=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Communicating"
+              },
+              "ifnot": "special_needs:difficulty_communicating="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_interpersonal_behavior_display=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in displaying Inter-Personal Behavior"
+              },
+              "ifnot": "special_needs:difficulty_interpersonal_behavior_display="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_hearing=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Hearing"
+              },
+              "ifnot": "special_needs:difficulty_hearing="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_mobility=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Mobility"
+              },
+              "ifnot": "special_needs:difficulty_mobility="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_remembering_concentrating=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Remembering & Concentrating. Paying Attention and Understanding"
+              },
+              "ifnot": "special_needs:difficulty_remembering_concentrating="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_seeing=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Seeing"
+              },
+              "ifnot": "special_needs:difficulty_seeing="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:visual_impairment=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Visual Impairment"
+              },
+              "ifnot": "special_needs:visual_impairment="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disorder_emotional_behavioral=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Emotional-Behavioral Disorder"
+              },
+              "ifnot": "special_needs:disorder_emotional_behavioral="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disability_intellectual=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Intellectual Disability"
+              },
+              "ifnot": "special_needs:disability_intellectual="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disability_learning=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Learning Disability"
+              },
+              "ifnot": "special_needs:disability_learning="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disability_multiple=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Multiple Disabilities"
+              },
+              "ifnot": "special_needs:disability_multiple="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:orthopedic_physical_handicap=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Orthopedic or Physical Handicap"
+              },
+              "ifnot": "special_needs:orthopedic_physical_handicap="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:chronic_disease_health_problem=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Special Health Problems or Chronic Disease"
+              },
+              "ifnot": "special_needs:chronic_disease_health_problem="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disorder_speech_language=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Speech or Language Disorder"
+              },
+              "ifnot": "special_needs:disorder_speech_language="
+            },
+            {
+              "if": {
+                "and": [
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": ""
+              },
+              "hideInAnswer": true
             }
           ],
           "question": {
-            "en": "Please select the available SpEd programs."
-          },
-          "condition": {
-            "and": []
+            "en": "Which of the following SpEd programs are offered?"
           }
         },
         "images"
@@ -290,13 +526,14 @@
         {
           "tags": [
             "amenity=school",
-            "school=special_needs_education"
+            "school=special_needs_education",
+            "specialized_education=special_needs"
           ],
           "title": {
             "en": "SpEd School"
           },
           "description": {
-            "en": "A school <b>exclusively</b> for learners with Special Education Needs."
+            "en": "A stand-alone school <b>exclusively</b> for learners with Special Education Needs. (i.e. school have their own principal)"
           }
         },
         {
@@ -305,10 +542,10 @@
             "specialized_education=special_needs"
           ],
           "title": {
-            "en": " School integrated with SpEd"
+            "en": " School with SpEd offerings"
           },
           "description": {
-            "en": "A regular school with integrated SpEd programs."
+            "en": "A regular school with SpEd offerings."
           }
         },
         {
@@ -325,13 +562,8 @@
       ],
       "source": {
         "osmTags": {
-          "or": [
-            "amenity=school",
-            {
-              "or": [
-                "office=educational_institution"
-              ]
-            }
+          "and": [
+            "amenity=school"
           ]
         }
       },
