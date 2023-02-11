@@ -1,2 +1,2 @@
 # need_for_sped
-a repo for a PoC MapComplete theme for SpEd schools
+Proof-of-Concept for a MapComplete theme focusing on school's available Special Education (SpEd) programs.
