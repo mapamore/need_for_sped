@@ -1,5 +1,6 @@
 {
-  "id": "NeedForSpEd_w0.23",
+  "id": "NeedForSpEd_dev",
+  "version": "0.35",
   "title": {
     "en": " SpEd Schools"
   },
@@ -7,16 +8,17 @@
     "en": "A map of schools with SpEd programs"
   },
   "description": {
-    "en": "SpEd is an acronym used to refer to learning programs for learners who require specialized education, and encompasses learners with a wide range of special needs:  mental incapacity, physical disability, and different levels of learning abilities.  This map focuses on institutions that offer Special Education programs in their curriculum."
+    "en": "This map lets you update schools that offer <a href=https://wikipedia.org/wiki/Special_education>Special Education</a>(SpEd) programs in their curriculum. SpEd is an acronym used to refer to learning programs for learners who require specialized education, and encompasses learners with a wide range of special needs: mental incapacity, physical disability, and different levels of learning abilities."
   },
   "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg",
   "startLat": 10.337955211834469,
   "startLon": 123.95728965702062,
   "startZoom": 15,
   "widenFactor": 0.05,
+  "defaultBackgroundId": "HDM_HOT",
   "layers": [
     {
-      "id": "schools",
+      "id": "school",
       "name": {
         "en": "schools"
       },
@@ -42,304 +44,565 @@
         "en": "A layer showing schools."
       },
       "tagRenderings": [
-        "images",
         {
-          "question": {
-            "en": "Is a SpEd program for <b>autism</b> offered here?"
-          },
           "render": {
-            "en": "{special_needs:autism}, this school offers SpEd program for learners with autism."
+            "en": "The school is called {name}."
+          },
+          "question": {
+            "en": "What is the name of this school"
           },
           "freeform": {
-            "key": "special_needs:autism",
-            "addExtraTags": [
-              "specialized_education=special_needs"
-            ]
+            "key": "name"
           },
-          "multiAnswer": false,
           "mappings": [
             {
               "if": {
                 "and": [
-                  "special_needs:autism=yes"
+                  "name="
                 ]
               },
               "then": {
-                "en": "Yes. A SpEd program for learners with <b>autism</b> is available."
+                "en": "The school name is unknown, or not set."
+              },
+              "hideInAnswer": true
+            }
+          ]
+        },
+        "website",
+        "email",
+        "phone",
+        {
+          "render": {
+            "en": "The operator type is <b>{operator:type}</b>."
+          },
+          "question": {
+            "en": "What type of entity operates the school?"
+          },
+          "freeform": {
+            "key": "operator:type"
+          },
+          "mappings": [
+            {
+              "if": {
+                "and": [
+                  "operator:type=government"
+                ]
+              },
+              "then": {
+                "en": "The operator is a government entity."
               }
             },
             {
               "if": {
                 "and": [
-                  "special_needs:autism="
+                  "operator:type=religious"
                 ]
               },
               "then": {
-                "en": "No. SpEd program for learners with <b>autism</b> is unavailable."
+                "en": "The operator is a religious entity."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=private"
+                ]
+              },
+              "then": {
+                "en": "The operator is a private entity."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=community"
+                ]
+              },
+              "then": {
+                "en": "The operator is a community-based organization."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=consortium"
+                ]
+              },
+              "then": {
+                "en": "The operator is a consortium."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type=public"
+                ]
+              },
+              "then": {
+                "en": "The operator is a public entity."
+              }
+            },
+            {
+              "if": {
+                "and": [
+                  "operator:type="
+                ]
+              },
+              "then": {
+                "en": "The operator is unknown, or not set."
               }
             }
           ],
           "condition": {
-            "and": [
-
-            ]
-          },
-          "id": "schools-special_needs:autism"
+            "and": []
+          }
         },
         {
-          "question": {
-            "en": "Is a SpEd program for <b>autism</b> offered here?"
-          },
           "render": {
-            "en": "{special_needs:adhd}, this school offers SpEd program for learners with <b>autism</b>."
+            "en": "{contact:facebook}"
+          },
+          "question": {
+            "en": "What is their Facebook page (if any)?"
           },
           "freeform": {
-            "key": "special_needs:adhd",
-            "addExtraTags": [
-              "specialized_education=special_needs"
-            ]
+            "key": "contact:facebook",
+            "type": "url"
           },
           "mappings": [
             {
               "if": {
                 "and": [
-                  "special_needs:adhd=yes"
+                  "contact:facebook="
                 ]
               },
               "then": {
-                "en": "Yes. A SpEd program for learners with <b>ADHD</b> is available."
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "special_needs:adhd="
-                ]
+                "en": "The school's Facebook page is unknown, or not set."
               },
-              "then": {
-                "en": "No. SpEd program for learners with <b>ADHD</b> is unavailable."
-              }
+              "hideInAnswer": true
             }
-          ],
-          "id": "schools-special_needs:adhd"
+          ]
         },
         {
-          "render": {
-            "en": "{special_needs:exceptional_learning}, this school offers SpEd program for learners with <b>exceptional learning</b> abilities."
-          },
           "question": {
-            "en": "Is a SpEd program for <b>exceptional learning (i.e., gifted)</b> abilities offered here?"
+            "en": "Does the school offer any SpEd program?"
           },
           "freeform": {
-            "key": "special_needs:exceptional_learning",
-            "addExtraTags": [
-              "specialized_education=special_needs"
-            ]
+            "key": "specialized_education"
           },
           "mappings": [
             {
               "if": {
                 "and": [
-                  "special_needs:exceptional_learning=yes"
+                  "specialized_education="
                 ]
               },
               "then": {
-                "en": "Yes. A SpEd program for learners with <b>exceptional learning</b> abilities is available."
-              }
+                "en": "SpEd programs are <b>not</b> available, or unknown."
+              },
+              "hideInAnswer": false
             },
             {
               "if": {
                 "and": [
-                  "special_needs:exceptional_learning="
+                  "specialized_education=special_needs",
+                  "education_program=specialized_education"
                 ]
               },
               "then": {
-                "en": "No. A SpEd program for learners with <b>exceptional learning</b> abilities is unavailable."
+                "en": "SpEd programs are available."
               }
             }
           ],
-          "id": "schools-special_needs:exceptional_learning"
+          "render": {
+            "en": "The school offers <b>Special Needs education.</b> (i.e. {specialized_education})"
+          }
         },
         {
+          "id": "sped-programs",
+          "multiAnswer": true,
           "render": {
-            "en": "{special_needs:learning_disability} this school offers SpEd program for learners with <b>learning disabilities</b>."
-          },
-          "question": {
-            "en": "Is a SpEd program for learners with <b>learning disbilities</b> offered here?"
+            "en": "{specialized_education}"
           },
           "freeform": {
-            "key": "special_needs:learning_disability",
-            "addExtraTags": [
-              "specialized_education=special_needs"
-            ]
+            "key": "specialized_education",
+            "addExtraTags": []
           },
           "mappings": [
             {
               "if": {
                 "and": [
-                  "special_needs:learning_disability=yes"
+                  "special_needs:asd=yes",
+                  "specialized_education=special_needs"
                 ]
               },
               "then": {
-                "en": "Yes. A SpEd program for learners with <b>learning disabilities</b> is available."
-              }
+                "en": "Autism Spectrum Disorder"
+              },
+              "ifnot": "special_needs:asd="
             },
             {
               "if": {
                 "and": [
-                  "special_needs:learning_disability="
+                  "special_needs:adhd=yes",
+                  "specialized_education=special_needs"
                 ]
               },
               "then": {
-                "en": "No. A SpEd program for learners with <b>learning disabilities</b> is unavailable."
-              }
+                "en": "Attention Deficit Hyperactivity Disorder"
+              },
+              "ifnot": "special_needs:adhd="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:blindness=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Blindness"
+              },
+              "ifnot": "special_needs:blindness="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:hearing_impairment=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Hearing Impairment"
+              },
+              "ifnot": "special_needs:hearing_impairment="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:exceptional_learning=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Exceptional Learning ('gifted')"
+              },
+              "ifnot": "special_needs:exceptional_learning="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:cancer=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Cancer"
+              },
+              "ifnot": "special_needs:cancer="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:cerebral_palsy=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Cerebral Palsy"
+              },
+              "ifnot": "special_needs:cerebral_palsy="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_adaptive_skills=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in applying Adaptive Skills"
+              },
+              "ifnot": "special_needs:difficulty_adaptive_skills="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_knowledge_application=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in applying Knowledge"
+              },
+              "ifnot": "special_needs:difficulty_knowledge_application="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_communicating=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Communicating"
+              },
+              "ifnot": "special_needs:difficulty_communicating="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_interpersonal_behavior_display=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in displaying Inter-Personal Behavior"
+              },
+              "ifnot": "special_needs:difficulty_interpersonal_behavior_display="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_hearing=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Hearing"
+              },
+              "ifnot": "special_needs:difficulty_hearing="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_mobility=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Mobility"
+              },
+              "ifnot": "special_needs:difficulty_mobility="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_remembering_concentrating=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Remembering & Concentrating. Paying Attention and Understanding"
+              },
+              "ifnot": "special_needs:difficulty_remembering_concentrating="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:difficulty_seeing=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Difficulty in Seeing"
+              },
+              "ifnot": "special_needs:difficulty_seeing="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:visual_impairment=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Visual Impairment"
+              },
+              "ifnot": "special_needs:visual_impairment="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disorder_emotional_behavioral=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Emotional-Behavioral Disorder"
+              },
+              "ifnot": "special_needs:disorder_emotional_behavioral="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disability_intellectual=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Intellectual Disability"
+              },
+              "ifnot": "special_needs:disability_intellectual="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disability_learning=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Learning Disability"
+              },
+              "ifnot": "special_needs:disability_learning="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disability_multiple=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Multiple Disabilities"
+              },
+              "ifnot": "special_needs:disability_multiple="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:orthopedic_physical_handicap=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Orthopedic or Physical Handicap"
+              },
+              "ifnot": "special_needs:orthopedic_physical_handicap="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:chronic_disease_health_problem=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Special Health Problems or Chronic Disease"
+              },
+              "ifnot": "special_needs:chronic_disease_health_problem="
+            },
+            {
+              "if": {
+                "and": [
+                  "special_needs:disorder_speech_language=yes",
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": "Speech or Language Disorder"
+              },
+              "ifnot": "special_needs:disorder_speech_language="
+            },
+            {
+              "if": {
+                "and": [
+                  "specialized_education=special_needs"
+                ]
+              },
+              "then": {
+                "en": ""
+              },
+              "hideInAnswer": true
             }
           ],
-          "id": "schools-special_needs:learning_disability"
-        },
-        {
-          "render": {
-            "en": "{special_needs:hearing_impairment} this school offers SpEd program for learners with <b>hearing impairment</b>."
-          },
           "question": {
-            "en": "Is a SpEd program for learners with <b>hearing impairment</b> offered here?"
-          },
-          "freeform": {
-            "key": "special_needs:hearing_impairment",
-            "addExtraTags": [
-              "specialized_education=special_needs"
-            ]
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "special_needs:hearing_impairment=yes"
-                ]
-              },
-              "then": {
-                "en": "Yes. A SpEd program for learners with <b>hearing impairment</b> is available."
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "special_needs:hearing_impairment="
-                ]
-              },
-              "then": {
-                "en": "No. A SpEd program for learners with <b>hearing impairment</b> is unavailable."
-              }
-            }
-          ],
-          "id": "schools-special_needs:hearing_impairment"
+            "en": "Which of the following SpEd programs are offered?"
+          }
         },
-        {
-          "render": {
-            "en": "{special_needs:visual_impairment} this school offers SpEd program for learners with <b>visual impairment</b>."
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "special_needs:visual_impairment=yes"
-                ]
-              },
-              "then": {
-                "en": "Yes. A SpEd program for learners with <b>visual impairment</b> is available."
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "special_needs:visual_impairment="
-                ]
-              },
-              "then": {
-                "en": "No. A SpEd program for learners with <b>visual impairment</b> is unavailable."
-              }
-            }
-          ],
-          "question": {
-            "en": "Is a SpEd program for learners with <b>visual impairment</b> offered here?"
-          },
-          "freeform": {
-            "key": "special_needs:visual_impairment",
-            "addExtraTags": [
-              "specialized_education=special_needs"
-            ]
-          },
-          "id": "schools-special_needs:visual_impairment"
-        },
-        {
-          "render": {
-            "en": "{special_needs:cancer} this school offers SpEd program for learners with <b>cancer</b>."
-          },
-          "mappings": [
-            {
-              "if": {
-                "and": [
-                  "special_needs:cancer=yes"
-                ]
-              },
-              "then": {
-                "en": "Yes. A SpEd program for learners with <b>cancer</b> is available."
-              }
-            },
-            {
-              "if": {
-                "and": [
-                  "special_needs:cancer="
-                ]
-              },
-              "then": {
-                "en": "No. A SpEd program for learners with <b>cancer</b> is unavailable."
-              }
-            }
-          ],
-          "question": {
-            "en": "Is a SpEd program for learners with <b>cancer</b> offered here?"
-          },
-          "freeform": {
-            "key": "special_needs:cancer",
-            "addExtraTags": [
-              "specialized_education=special_needs"
-            ]
-          },
-          "id": "schools-special_needs:cancer"
-        }
+        "images"
       ],
       "presets": [
-
+        {
+          "tags": [
+            "amenity=school",
+            "school=special_needs_education",
+            "specialized_education=special_needs"
+          ],
+          "title": {
+            "en": "SpEd School"
+          },
+          "description": {
+            "en": "A stand-alone school <b>exclusively</b> for learners with Special Education Needs. (i.e. school have their own principal)"
+          }
+        },
+        {
+          "tags": [
+            "amenity=school",
+            "specialized_education=special_needs"
+          ],
+          "title": {
+            "en": " School with SpEd offerings"
+          },
+          "description": {
+            "en": "A regular school with SpEd offerings."
+          }
+        },
+        {
+          "tags": [
+            "amenity=school"
+          ],
+          "title": {
+            "en": "regular school"
+          },
+          "description": {
+            "en": "A regular school <b>without</b> SpEd programs."
+          }
+        }
       ],
       "source": {
         "osmTags": {
-          "or": [
-            "amenity=school",
-            {
-              "or": [
-                "office=educational_institution"
-              ]
-            }
+          "and": [
+            "amenity=school"
           ]
         }
       },
-      "mapRendering": [
-        {
-          "icon": {
-            "render": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg"
-          },
-          "iconSize": {
-            "render": "20,20,center"
-          },
-          "location": [
-            "point",
-            "centroid"
-          ]
-        }
-      ]
+      "icon": {
+        "render": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg",
+        "mappings": [
+          {
+            "if": {
+              "and": [
+                "specialized_education=special_needs"
+              ]
+            },
+            "then": {
+              "en": "circle:lime;https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg"
+            }
+          }
+        ]
+      },
+      "iconSize": {
+        "mappings": []
+      },
+      "color": {
+        "mappings": []
+      },
+      "width": {
+        "mappings": []
+      },
+      "overpassTags": {
+        "and": [
+          "amenity=school"
+        ]
+      },
+      "wayHandling": 1
     }
   ],
   "credits": "",
-  "enableNoteImports": false
+  "enableNoteImports": false,
+  "language": [
+    "en"
+  ],
+  "roamingRenderings": []
 }
