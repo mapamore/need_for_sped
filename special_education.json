@@ -1,6 +1,6 @@
 {
   "id": "NeedForSpEd_dev",
-  "version": "0.35",
+  "version": "0.36",
   "title": {
     "en": " SpEd Schools"
   },
@@ -8,7 +8,7 @@
     "en": "A map of schools with SpEd programs"
   },
   "description": {
-    "en": "This map lets you update schools that offer <a href=https://wikipedia.org/wiki/Special_education>Special Education</a>(SpEd) programs in their curriculum. SpEd is an acronym used to refer to learning programs for learners who require specialized education, and encompasses learners with a wide range of special needs: mental incapacity, physical disability, and different levels of learning abilities."
+    "en": "This map lets you update schools that offer <a href=https://wikipedia.org/wiki/Special_education>Special Education</a>(SpEd) programs for learners with special needs."
   },
   "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4e/School_%284405%29_-_The_Noun_Project.svg",
   "startLat": 10.337955211834469,
@@ -186,9 +186,6 @@
           "question": {
             "en": "Does the school offer any SpEd program?"
           },
-          "freeform": {
-            "key": "specialized_education"
-          },
           "mappings": [
             {
               "if": {
@@ -212,21 +209,11 @@
                 "en": "SpEd programs are available."
               }
             }
-          ],
-          "render": {
-            "en": "The school offers <b>Special Needs education.</b> (i.e. {specialized_education})"
-          }
+          ]
         },
         {
           "id": "sped-programs",
           "multiAnswer": true,
-          "render": {
-            "en": "{specialized_education}"
-          },
-          "freeform": {
-            "key": "specialized_education",
-            "addExtraTags": []
-          },
           "mappings": [
             {
               "if": {
